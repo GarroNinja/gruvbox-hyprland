@@ -1,0 +1,4 @@
+# Gruvbox Wayland Config
+
+## About
+
