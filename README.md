@@ -4,7 +4,7 @@
 A clean, Gruvbox-themed Waybar setup featuring all essential modules for a streamlined experience.
 
 ## Screenshot
-![image](https://github.com/user-attachments/assets/614d30b5-3ef2-4e49-b181-e8a8b66380d3)
+![image](https://github.com/user-attachments/assets/917c0578-3f23-40c7-9291-8acb17880164)
 
 ## Installation
 1) Backup your previous config files (easier roll back if you intend to revert)
