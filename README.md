@@ -1,7 +1,7 @@
 # Gruvbox Wayland Config for Hyprland
 
 ## About
-A mininal gruvbox themed waybar config with all the essentials modules.
+A clean, Gruvbox-themed Waybar setup featuring all essential modules for a streamlined experience.
 
 ## Screenshot
 ![image](https://github.com/user-attachments/assets/614d30b5-3ef2-4e49-b181-e8a8b66380d3)
