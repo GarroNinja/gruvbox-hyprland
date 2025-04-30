@@ -14,7 +14,7 @@ A mininal gruvbox themed waybar config with all the essentials modules.
 ## Note
 Use managers of your choice for network, bluetooth, launcher, etc by replacing the `"on-click":` for the necessary modules and replace `kitty` with your choice of terminal.
 
-#Credits
+## Credits
 https://github.com/LilAiluropoda/hyprland-gruvbox-theme
 
 
