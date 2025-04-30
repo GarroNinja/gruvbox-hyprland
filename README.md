@@ -12,9 +12,9 @@ A mininal gruvbox themed waybar config with all the essentials modules.
 4) Restart your session.
 
 ## Note
-Use managers of your choice for network, bluetooth, launcher, etc by replacing the `"on-click":` for the necessary modules and replace `kitty` with your choice of terminal.
+Use managers of your choice for network, bluetooth, launcher, etc by replacing the `"on-click":` for necessary modules and replace `kitty` with your choice of terminal where ever necessary.
 
-This config assumes that have these installed:
+This config assumes that have the following installed:
 1) kitty
 2) nmtui
 3) blueman-manager
