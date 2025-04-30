@@ -4,7 +4,7 @@
   font-family: "JetbrainsMono Nerd Font";
   /* font-weight: bold; */
   font-size: 10px;
-  min-height: 5px; /* Reduced from 10px */
+  min-height: 3px; /* Reduced from 10px */
 }
 
 window#waybar {
@@ -16,7 +16,10 @@ window#waybar.hidden {
 }
 
 #window,
+#custom-updates,
+#taskbar,
 #workspaces,
+#tray,
 #network,
 #wireplumber,
 #battery,
@@ -35,6 +38,7 @@ window#waybar.hidden {
 #window {
   color: transparent;
   background: transparent;
+  box-shadow: none;
 }
 
 #workspaces {
@@ -67,9 +71,13 @@ window#waybar.hidden {
   background: #cc241d;
 }
 
+#tray {
+  background-color: #282828;
+}
+
 #wireplumber {
   color: #1a1826;
-  background: #98971a;
+  background: #458588;
 }
 
 #battery {
@@ -109,6 +117,11 @@ window#waybar.hidden {
   background: #d79921;
 }
 
+#taskbar {
+  background: #282828;
+  font-size: 4px;
+}
+
 #cpu {
   color: #161320;
   background: #b8bb26;
@@ -132,6 +145,10 @@ window#waybar.hidden {
   color: #000000;
   background-color: #689d6a;
   transition: all 0.3s ease;
+}
+
+#custom-updates {
+  background-color: #282828;
 }
 
 #mpris {

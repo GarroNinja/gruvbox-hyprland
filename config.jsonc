@@ -1,8 +1,8 @@
 {
   "layer": "top",
-  "modules-left": ["custom/launcher", "backlight", "wireplumber", "mpris"],
+  "modules-left": ["custom/launcher", "backlight", "wireplumber", "cpu", "mpris"],
   "modules-center": ["hyprland/workspaces", "clock"],
-  "modules-right": ["custom/bluetooth", "network", "cpu", "memory", "battery"],
+  "modules-right": ["custom/bluetooth", "network", "memory", "tray", "battery", "custom/updates"],
 
   "wireplumber": {
     "tooltip": false,
@@ -15,7 +15,7 @@
 
 "network": {
     "tooltip": true,
-    "format-wifi": "  {essid}",
+    "format-wifi": " ",
     "rotate": 0,
     "format-ethernet": "󰈀 ",
     "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
@@ -34,34 +34,40 @@
     "on-scroll-down": "brightnessctl set 2%-"
   },
 
-  "battery": {
+"battery": {
     "states": {
-      "full": 100,
-      "good": 95,
-      "decent": 50,
-      "warning": 30,
-      "critical": 20
+        "good": 95,
+        "warning": 30,
+        "critical": 20
     },
-    "format": "{icon}  {capacity}%",
-    "format-time": "{H} h {M} min",
-    "format-alt": "{icon} {time}",
-    "format-icons": ["", "", "", "", ""]
-  },
+    "format": "{icon} {capacity}%",
+    "rotate": 0,
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+},
 
   "clock": {
     "format": "{:%H:%M}",
     "format-alt": "{:%m-%d-%Y}"
   },
 
-"cpu": {
-  "format": "  {usage}%",
-  "on-click": "kitty -- btop",
-  "tooltip": true
-},
+  "cpu": {
+    "format": "  {usage}%",
+    "on-click": "kitty -- btop",
+    "tooltip": true
+  },
+
+  "tray": {
+      "icon-size": 16,
+      "rotate": 0,
+      "spacing": 5
+  },
 
   "memory": {
     "interval": 30,
-    "format": "  {used:0.1f}G / {total:0.1f}G",
+    "format": "  {used:0.1f}G/{total:0.1f}G",
     "max-length": 20
   },
 
@@ -72,7 +78,7 @@
   },
 
   "custom/bluetooth": {
-    "format": "  {}",
+    "format": " {}",
     "exec": "bluetoothctl show | grep -q 'Powered: yes' && (bluetoothctl devices Connected | grep -q . && bluetoothctl devices Connected | head -n1 | cut -d ' ' -f3- || echo 'No devices') || echo 'Off'",
     "interval": 10,
     "on-click": "blueman-manager",
@@ -94,7 +100,7 @@
       "paused": "▶",
       "playing": "⏸"
     },
-    "max-length": 50,
+    "max-length": 40,
     "tooltip": true
   },
 
@@ -126,7 +132,202 @@
     "active": "",
     "sort-by-number": true
   }
+},
+
+"custom/updates": {
+            "exec": "systemupdate.sh",
+            "return-type": "json",
+            "format": "{}",
+            "rotate": 0,
+            "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
+            "interval": 86400, // once every day
+            "tooltip": true,
+            "signal": 20
+},
+
+"wlr/taskbar": {
+		"format": "{icon}",
+		"rotate": ${r_deg},
+		"icon-size": ${i_task},
+		"icon-theme": "${i_theme}",
+    "spacing": 0,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [
+			"Alacritty"
+		],
+		"app_ids-mapping": {
+			"firefoxdeveloperedition": "firefox-developer-edition",
+      "jetbrains-datagrip": "DataGrip"
+		}
 }
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
+
+
+// positions generated based on config.ctl //
+
+	"modules-left": ["custom/padd","","custom/padd"],
+	"modules-center": ["custom/padd","","custom/padd"],
+	"modules-right": ["custom/padd","","custom/padd"],
+
+
+// sourced from modules based on config.ctl //
+
 
 
 // positions generated based on config.ctl //
