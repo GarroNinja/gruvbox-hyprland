@@ -1,0 +1,17 @@
+* {
+    /* Gruvbox dark colors */
+    background:     #282828;
+    background-alt: #3c3836;
+    foreground:     #ebdbb2;
+    border:         #a89984;
+    selected:       #83a598;
+    active:         #b8bb26;
+    urgent:         #fb4934;
+    
+    /* Main theme colors */
+    main-bg:        @background;
+    main-fg:        @foreground;
+    main-br:        @border;
+    select-bg:      @selected;
+    select-fg:      @background;
+} 

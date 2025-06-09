@@ -1,0 +1,168 @@
+{
+  "layer": "top",
+  "output": ["HDMI-A-1", "eDP-1"],
+  "modules-left": ["custom/launcher", "backlight", "wireplumber", "cpu", "mpris"],
+  "modules-center": ["hyprland/workspaces", "clock"],
+  "modules-right": ["wlr/taskbar", "custom/bluetooth", "network", "memory", "tray", "battery", "custom/updates"],
+
+  "wireplumber": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 {volume}%",
+    "on-click": "pavucontrol",
+    "format-icons": ["", "", ""]
+  },
+
+  "network": {
+    "tooltip": true,
+    "format-wifi": " ",
+    "rotate": 0,
+    "format-ethernet": "󰈀 ",
+    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+    "format-linked": "󰈀 {ifname} (No IP)",
+    "format-disconnected": "󰖪 ",
+    "tooltip-format-disconnected": "Disconnected",
+    "interval": 2,
+    "on-click": "~/.config/rofi/iwmenu/iwmenu-waybar.sh"
+  },
+
+  "backlight": {
+        "device": "intel_backlight",
+        "rotate": 0,
+        "format": "{icon} {percent}%",
+        "format-icons": [""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6
+    },
+
+  "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "rotate": 0,
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%m-%d-%Y}",
+    "tooltip": false
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "on-click": "kitty -- btop",
+    "tooltip": true
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "rotate": 0,
+    "spacing": 5
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "  {used:0.1f}G/{total:0.1f}G",
+    "max-length": 20
+  },
+
+  "custom/launcher": {
+    "format": " ",
+    "on-click": "sh ~/.config/rofi/launcher/launcher.sh",
+    "on-click-right":"killall rofi"
+  },
+  
+  "custom/bluetooth": {
+    "format": " {}",
+    "exec": "~/.config/waybar/bluetooth-display.sh",
+    "interval": 10,
+    "on-click": "blueman-manager",
+    "return-type": "plain",
+    "tooltip": false,
+    "max-length": 25
+  },
+
+  "mpris": {
+    "format": "{player_icon}  {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "format-stopped": "",
+    "ignore-list": ["vesktop"],
+    "player-icons": {
+      "brave": "",
+      "default": "",
+      "spotify": "",
+      "vlc": "",
+      "mpv": ""
+    },
+    "status-icons": {
+      "paused": "▶",
+      "playing": "⏸"
+    },
+    "max-length": 40,
+    "tooltip": true
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "11": "11",
+      "12": "12",
+      "13": "13",
+      "14": "14",
+      "15": "15",
+      "16": "16",
+      "17": "17",
+      "18": "18",
+      "19": "19",
+      "20": "20"
+    },
+    "active": "",
+    "sort-by-number": true
+  },
+  
+  "custom/updates": {
+    "exec": "systemupdate.sh",
+    "return-type": "json",
+    "format": "{}",
+    "rotate": 0,
+    "on-click": "hyprctl dispatch exec 'systemupdate.sh up'",
+    "interval": 43200,
+    "tooltip": true,
+    "signal": 20
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 16,
+    "icon-theme": "Gruvbox-Dark-Hard",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": ["kitty", "vesktop"],
+    "app_ids-mapping": {
+      "firefoxdeveloperedition": "firefox-developer-edition"
+    },
+    "markup": true,
+    "all-outputs": false
+  }
+}

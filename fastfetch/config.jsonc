@@ -1,0 +1,146 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/reckoner71.jpg",
+    "height": 16,
+    "width": 30,
+    "padding": {
+      "top": 2,
+      "left": 2
+    }
+  },
+  "display": {
+    "separator": " ",
+    "size": {
+      "binaryPrefix": "iec"
+    },
+    "color": {
+      "output": "223"
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": "╭─",
+      "keyColor": "214"
+    },
+    {
+      "type": "separator",
+      "string": "─"
+    },
+    {
+      "type": "os",
+      "key": "├ OS",
+      "keyColor": "208",
+      "format": "\u001b[38;5;65m{2} {12}\u001b[0m"
+    },
+    {
+      "type": "kernel", 
+      "key": "├ Kernel",
+      "keyColor": "214",
+      "format": "\u001b[38;5;109m{1} {2}\u001b[0m"
+    },
+    {
+      "type": "uptime",
+      "key": "├ Uptime", 
+      "keyColor": "142"
+    },
+    {
+      "type": "packages",
+      "key": "├ Packages",
+      "keyColor": "109",
+      "format": "\u001b[38;5;214m{1}\u001b[0m \u001b[38;5;142m({2})\u001b[0m"
+    },
+    {
+      "type": "shell",
+      "key": "├ Shell",
+      "keyColor": "175",
+      "format": "\u001b[38;5;109m{1} {2}\u001b[0m"
+    },
+    {
+      "type": "display",
+      "key": "├ Display",
+      "keyColor": "208",
+      "format": "\u001b[38;5;65m{1}×{2}\u001b[0m @ \u001b[38;5;214m{5} Hz\u001b[0m"
+    },
+    {
+      "type": "de",
+      "key": "├ DE",
+      "keyColor": "142",
+      "format": "\u001b[38;5;175m{1}\u001b[0m"
+    },
+    {
+      "type": "wm",
+      "key": "├ WM",
+      "keyColor": "109",
+      "format": "\u001b[38;5;214m{1}\u001b[0m \u001b[38;5;109m({3})\u001b[0m"
+    },
+    {
+      "type": "terminal",
+      "key": "├ Terminal",
+      "keyColor": "175",
+      "format": "\u001b[38;5;142m{1}\u001b[0m"
+    },
+    {
+      "type": "separator",
+      "string": "─"
+    },
+    {
+      "type": "cpu",
+      "key": "├ CPU",
+      "keyColor": "167",
+      "format": "\u001b[38;5;214m{1}\u001b[0m \u001b[38;5;196m({5}) @ {7}\u001b[0m"
+    },
+    {
+      "type": "gpu", 
+      "key": "├ GPU",
+      "keyColor": "142"
+    },
+    {
+      "type": "memory",
+      "key": "├ Memory", 
+      "keyColor": "208",
+      "format": "\u001b[38;5;196m{1}\u001b[0m / \u001b[38;5;65m{2}\u001b[0m \u001b[38;5;214m({3})\u001b[0m"
+    },
+    {
+      "type": "disk",
+      "key": "├ Disk (/)",
+      "keyColor": "109",
+      "format": "\u001b[38;5;196m{1}\u001b[0m / \u001b[38;5;65m{2}\u001b[0m \u001b[38;5;208m({3})\u001b[0m"
+    },
+    {
+      "type": "localip",
+      "key": "├ Local IP",
+      "keyColor": "175",
+      "format": "\u001b[38;5;109m{1}\u001b[0m"
+    },
+    {
+      "type": "battery",
+      "key": "├ Battery",
+      "keyColor": "214",
+      "format": "\u001b[38;5;65m{4}\u001b[0m \u001b[38;5;175m[{5}]\u001b[0m"
+    },
+    {
+      "type": "poweradapter",
+      "key": "├ Power",
+      "keyColor": "167",
+      "format": "\u001b[38;5;214m{1}\u001b[0m"
+    },
+    {
+      "type": "locale",
+      "key": "├ Locale", 
+      "keyColor": "142",
+      "format": "\u001b[38;5;175m{1}\u001b[0m"
+    },
+    {
+      "type": "separator",
+      "string": "─"
+    },
+    {
+      "type": "colors",
+      "key": "╰─ Colors",
+      "keyColor": "214",
+      "symbol": "circle"
+    }
+  ]
+}
