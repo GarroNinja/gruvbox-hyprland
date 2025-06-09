@@ -14,6 +14,8 @@ A comprehensive collection of Gruvbox-themed configuration files for Hyprland an
 
 ![Search and nvim](screenshots/image4.png)
 
+![Fastfetch](screenshots/image6.png)
+
 ![Powermenu](screenshots/image5.png)
 
 
