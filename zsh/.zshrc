@@ -59,7 +59,6 @@ function in {
         ${aurhelper} -S "${aur[@]}"
     fi
 }
-export GEMINI_API_KEY="AIzaSyCbSA4vDKiYePwUBFQ6VDP8u02UwZfkwTw"
 
 # Helpful aliases
 alias c='clear' # clear terminal
