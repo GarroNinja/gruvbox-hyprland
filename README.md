@@ -4,9 +4,8 @@
 
 A comprehensive collection of Gruvbox-themed configuration files for Hyprland and related applications. This repository includes configurations for Waybar, Kitty, Rofi, Fastfetch, Cava, and Zsh to create a cohesive, beautiful gruvbox-themed desktop environment.
 
-## Screenshot
+## Screenshots
 
-![Gruvbox Hyprland Setup](image)
 
 ## What's Included
 
@@ -52,7 +51,7 @@ Ensure you have the following installed:
    cd gruvbox-hyprland
    ```
 
-3. **Copy configurations to your system**
+3. **Copy configurations to your system (not recommended, review and copy the contents of each file for better integration)** 
    ```bash
    # Copy application configs
    cp -r waybar/* ~/.config/waybar/
@@ -133,7 +132,7 @@ The configuration assumes you have the following applications installed:
 ### Core Applications
 - `waybar` - Status bar
 - `kitty` - Terminal emulator  
-- `rofi` - Application launcher
+- `rofi` - launcher
 - `fastfetch` - System info
 - `cava` - Audio visualizer
 
@@ -141,13 +140,12 @@ The configuration assumes you have the following applications installed:
 - `zsh` - Shell
 - `oh-my-zsh` - Zsh framework
 - `starship` - Shell prompt
-- `eza` - Modern ls replacement
 - `pokemon-colorscripts` - Pokemon display
 - `nitch++` - System info display
 
 ### System Tools (used in aliases)
-- `pacman`/`yay`/`paru` - Package managers
-- `nmtui` - Network management
+- `pacman`/`yay` - Package managers
+- `iwmenu` - Network management
 - `blueman-manager` - Bluetooth management
 - `pavucontrol` - Audio control
 - `btop` - System monitor
@@ -167,7 +165,6 @@ Feel free to submit issues, fork the repository, and create pull requests for an
 
 ## Credits
 
-- Original inspiration: [LilAiluropoda/hyprland-gruvbox-theme](https://github.com/LilAiluropoda/hyprland-gruvbox-theme)
 - Gruvbox color scheme by Pavel Pertsev
 - Community configurations and scripts from various contributors
 
