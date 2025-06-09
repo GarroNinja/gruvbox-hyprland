@@ -6,6 +6,16 @@ A comprehensive collection of Gruvbox-themed configuration files for Hyprland an
 
 ## Screenshots
 
+![Desktop Overview](screenshots/image.png)
+
+![Application Launcher](screenshots/image2.png)
+
+![Window Launcher](screenshots/image3.png)
+
+![Search and nvim](screenshots/image4.png)
+
+![Powermenu](screenshots/image5.png)
+
 
 ## What's Included
 
