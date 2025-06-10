@@ -24,25 +24,35 @@ A comprehensive collection of Gruvbox-themed configuration files for Hyprland an
 - **📊 Waybar** - Status bar with all essential modules and gruvbox styling
 - **🖥️ Kitty** - Terminal emulator with gruvbox color scheme
 - **🚀 Rofi** - Application launcher and menu system with gruvbox theme
-- **⚡ Fastfetch** - System information display with custom branding
+- **⚡ Fastfetch** - System information display
 - **🎵 Cava** - Audio visualizer with gruvbox colors
-- **🐚 Zsh** - Shell configuration with oh-my-zsh, starship prompt, and useful aliases
+- **🐚 Zsh** - Shell configuration with oh-my-zsh, starship prompt, custom nitch++ with pokemon display
 
 ## Installation
 
-### Prerequisites
+The configuration assumes you have the following applications installed:
 
-Ensure you have the following installed:
+### Core Applications
+- `waybar` - Status bar
+- `kitty` - Terminal emulator  
+- `rofi` - launcher
+- `fastfetch` - System info
+- `cava` - Audio visualizer
 
-- Hyprland
-- Waybar
-- Kitty terminal
-- Rofi
-- Fastfetch
-- Cava
-- Zsh with oh-my-zsh
-- Starship prompt
-- Required zsh plugins: `zsh-autosuggestions`, `zsh-syntax-highlighting`, `zsh-vi-mode`
+### Shell and Utilities
+- `zsh` - Shell
+- `oh-my-zsh` - Zsh framework
+- `zsh-vi-mode` - Zsh extension for vim bindings
+- `starship` - Shell prompt
+- `krabby` - Pokemon display written in rust
+- `nitch++` - System info display
+
+### System Tools (used in aliases)
+- `pacman`/`yay` - Package managers
+- `iwmenu` - Network management
+- `blueman-manager` - Bluetooth management
+- `pavucontrol` - Audio control
+- `btop` - System monitor
 
 ### Installation Steps
 
@@ -102,12 +112,12 @@ Ensure you have the following installed:
 ### Rofi Launcher
 - Multiple gruvbox-themed styles
 - Custom launchers for different use cases
-- Power menu, application launcher, window switcher
+- Power menu, application launcher, window switcher, custom them iwmenu with gruvbox theme
 
 ### Fastfetch
 - Custom logo and system information display
 - Gruvbox color coordination
-- Clean, informative output
+- Clean, informative output and tiled mode responsive
 
 ### Cava Audio Visualizer
 - Gruvbox color palette
@@ -118,8 +128,7 @@ Ensure you have the following installed:
 - oh-my-zsh with useful plugins
 - Starship prompt with gruvbox theme
 - Comprehensive aliases for system management
-- Pokemon + system info display on terminal startup
-- Package management helpers for Arch Linux
+- Pokemon + system info display on terminal startup (nitch++ and krabby custom scriptt)
 
 ## Customization
 
@@ -136,31 +145,6 @@ Feel free to modify any configurations to suit your preferences. The color schem
 - Purple: `#b16286`
 - Aqua: `#689d6a`
 - Orange: `#d65d0e`
-
-## Dependencies
-
-The configuration assumes you have the following applications installed:
-
-### Core Applications
-- `waybar` - Status bar
-- `kitty` - Terminal emulator  
-- `rofi` - launcher
-- `fastfetch` - System info
-- `cava` - Audio visualizer
-
-### Shell and Utilities
-- `zsh` - Shell
-- `oh-my-zsh` - Zsh framework
-- `starship` - Shell prompt
-- `pokemon-colorscripts` - Pokemon display
-- `nitch++` - System info display
-
-### System Tools (used in aliases)
-- `pacman`/`yay` - Package managers
-- `iwmenu` - Network management
-- `blueman-manager` - Bluetooth management
-- `pavucontrol` - Audio control
-- `btop` - System monitor
 
 ## Troubleshooting
 
