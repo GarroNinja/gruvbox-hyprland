@@ -1,6 +1,9 @@
 # Remove Powerlevel10k instant prompt block
 # We're using Starship now!
 
+# Benchmark: Start timing (uncomment to measure startup time)
+# ZSHRC_START_TIME=$(date +%s.%N)
+
 ZSH=/usr/share/oh-my-zsh/
 
 # List of plugins used
@@ -89,65 +92,29 @@ alias .5='cd ../../../../..'
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 alias mkdir='mkdir -p'
 
-# Display Pokemon and nitch++ side-by-side outside Zed, VSCode, etc.
+# Fast Pokemon and nitch++ display (minimal version)
 if [[ "$TERM_PROGRAM" != "vscode" && "$TERM_PROGRAM" != "Code" && "$TERM_PROGRAM" != "Zed" && "$TERM" != "xterm-256color" ]]; then
-  printf ""
-
-  MAX_ALLOWED_WIDTH=36
-  POKEMON_FILE=$(mktemp)
-  found_valid_pokemon=false
-
-  for attempt in {1..5}; do
-    pokemon-colorscripts --no-title -r 1,2,3,4,6 > "$POKEMON_FILE"
-
-    # Check Pokémon width using Python
-    python3 - "$POKEMON_FILE" "$MAX_ALLOWED_WIDTH" <<'EOF'
-import sys, re
-filename = sys.argv[1]
-max_width = int(sys.argv[2])
-
-with open(filename, encoding="utf-8", errors="ignore") as f:
-    lines = f.read().splitlines()
-
-ansi_strip = lambda s: re.sub(r"\x1b\[[0-9;]*[mKHGJ]", "", s)
-if all(len(ansi_strip(line)) <= max_width for line in lines):
-    sys.exit(0)  # valid
-sys.exit(1)  # too wide
-EOF
-
-    if [[ $? -eq 0 ]]; then
-      found_valid_pokemon=true
-      break
-    fi
-  done
-
-  if ! $found_valid_pokemon; then
-    echo "Pokemon too wide!" > "$POKEMON_FILE"
-  fi
-
-  NITCH_FILE=$(mktemp)
-  nitch++ > "$NITCH_FILE"
-
-  python3 - "$POKEMON_FILE" "$NITCH_FILE" <<'EOF'
-import sys, re
-
-with open(sys.argv[1], encoding="utf-8", errors="ignore") as f:
-    pokemon_lines = f.read().splitlines()
-
-with open(sys.argv[2], encoding="utf-8", errors="ignore") as f:
-    nitch_lines = f.read().splitlines()[4:]  # Skip nitch++ header
-
-strip_ansi = lambda s: re.sub(r"\x1b\[[0-9;]*[mKHGJ]", "", s)
-pad = max(len(strip_ansi(line)) for line in pokemon_lines)
-max_lines = max(len(pokemon_lines), len(nitch_lines))
-
-for i in range(max_lines):
-    left = pokemon_lines[i] if i < len(pokemon_lines) else ""
-    right = nitch_lines[i] if i < len(nitch_lines) else ""
-    print(f"{left}\033[0m{' ' * (pad - len(strip_ansi(left)))}{right}")
-EOF
-
-  rm -f "$POKEMON_FILE" "$NITCH_FILE"
+  # Benchmark: Start Pokemon display timing (uncomment to measure)
+  # POKEMON_START_TIME=$(date +%s.%N)
+  
+  # Minimal approach - just get Pokemon and nitch, combine with simple paste
+  temp_dir=$(mktemp -d)
+  
+  # Get outputs in parallel 
+  krabby random 1,2,3,4,6 --no-title > "$temp_dir/pokemon" 2>/dev/null &
+  nitch++ | tail -n +5 > "$temp_dir/nitch" 2>/dev/null &
+  wait
+  
+  # Simple paste with fixed padding (much faster than calculating)
+  paste <(sed 's/$/                                     /' "$temp_dir/pokemon") "$temp_dir/nitch"
+  
+  # Cleanup
+  rm -rf "$temp_dir"
+  
+  # Benchmark: End Pokemon display timing (uncomment to measure)
+  # POKEMON_END_TIME=$(date +%s.%N)
+  # POKEMON_DURATION=$(echo "$POKEMON_END_TIME - $POKEMON_START_TIME" | bc -l)
+  # echo "Pokemon display took: ${POKEMON_DURATION}s"
 fi
 
 export BROWSER=firefox
@@ -171,3 +138,8 @@ export GDK_DPI_SCALE=1.25   # or 1.5 or 2 depending on your monitor
 export XCURSOR_SIZE=16
 # Initialize Starship prompt
 eval "$(starship init zsh)"
+
+# Benchmark: End timing (uncomment to measure startup time)
+# ZSHRC_END_TIME=$(date +%s.%N)
+# TOTAL_DURATION=$(echo "$ZSHRC_END_TIME - $ZSHRC_START_TIME" | bc -l)
+# echo "Total zshrc load time: ${TOTAL_DURATION}s"
