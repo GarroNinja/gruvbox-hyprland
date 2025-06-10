@@ -1,9 +1,5 @@
 # Gruvbox Hyprland Theme Configuration
 
-## About
-
-A comprehensive collection of Gruvbox-themed configuration files for Hyprland and related applications. This repository includes configurations for Waybar, Kitty, Rofi, Fastfetch, Cava, and Zsh to create a cohesive, beautiful gruvbox-themed desktop environment.
-
 ## Screenshots
 
 ![Desktop Overview](screenshots/image.png)
